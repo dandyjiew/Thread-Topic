@@ -4,14 +4,15 @@ package com.createthread;
 /**
  * 创建线程方式一：继承Thread类，并重写run()方法，run方法就代表了线程需要执行的任务，不重写的话，继承父类的run方法，空输出
  * 优势：编写简单
- * 劣势：因为线程已经继承了Thread类，所以不能再继承其他父类(https://blog.csdn.net/sinat_27933301/article/details/69944286原文链接)
+ * 劣势：因为线程已经继承了Thread类，所以不能再继承其他父类
  */
 public class Method1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         MyThread1 myThread1 = new MyThread1();
         myThread1.start();
 
         //可以发现，除了自己生成的线程运行了，其实还有隐藏的主线程main线程
+        //Java中的主线程是当程序启动时开始执行的线程。所有的子线程都是从主线程衍生出来的，主线程是最后一个完成执行的线程。
         System.out.println(Thread.currentThread().getName());
 
         MyThread2 myThread2 = new MyThread2("我的线程2");
@@ -21,6 +22,10 @@ public class Method1 {
         MyThread2 myThread3 = new MyThread2();
         myThread3.setName("我的线程3");
         myThread3.start();
+
+        //先让主线程休眠，确保其他线程已经结束，可以看出，主线程是最后一个完成执行的线程。
+        Thread.sleep(50);
+        System.out.println("主线程结束");
     }
 }
 
