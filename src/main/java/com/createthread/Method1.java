@@ -3,7 +3,7 @@ package com.createthread;
 
 /**
  * 创建线程方式一：继承Thread类，并重写run()方法，run方法就代表了线程需要执行的任务，不重写的话，继承父类的run方法，空输出
- * 优势：编写简单
+ * 优势：编写简单，如果需要访问当前线程，则无需使用 Thread.currentThread()方法，直接使用this即可获取当前线程
  * 劣势：因为线程已经继承了Thread类，所以不能再继承其他父类
  */
 public class Method1 {

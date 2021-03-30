@@ -3,6 +3,8 @@ package com.createthread;
 
 /**
  * 创建线程方式二：可以通过实现Runnable接口并覆盖run()方法来创建线程。然后可以创建一个线程对象并调用start()方法。
+ * 优势：还可以继承其他类，或者实现其他接口；多个线程可以共享同一个target对象，所以非常适合多个相同线程来处理同一份资源的情况。
+ * 劣势：编程稍稍复杂，如果需要访问当前线程，则必须使用Thread.currentThread()方法
  */
 public class Method2 {
 
