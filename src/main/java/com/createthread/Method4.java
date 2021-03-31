@@ -25,9 +25,18 @@ public class Method4 {
             }
         }).start();
 
-        // 同上，使用lambda表达式函数式编程
+        //同上，使用lambda表达式函数式编程
         new Thread(()->{
             System.out.println(Thread.currentThread().getName() + " is running");
         }).start();
+
+        //思考：既继承了Thread类，同时又实现了Runnable接口,最后会打印出什么信息
+        //优先执行子类重写的方法
+        new Thread(() -> System.out.println("runnable run")) {
+            @Override
+            public void run() {
+                System.out.println("Thread run");
+            }
+        }.start();
     }
 }
