@@ -6,13 +6,13 @@
 
 - [x] 创建线程的方法
 
-  - 继承Thread类，并重写run()方法
+  - 继承Thread类
 
-  - 实现Runnable接口并覆盖run()方法
+  - 实现Runnable
 
-  - 实现Callabe接口
+  - 实现Callabe
 
-  - 使用匿名类的方式，一是重写Thread的run()方法，二是传入Runnable的匿名类，三是使用lambda方式
+  - 使用匿名类的方式
 
   - 定时器（java.util.Timer）
 
