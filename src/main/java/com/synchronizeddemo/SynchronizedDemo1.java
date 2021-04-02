@@ -23,7 +23,7 @@ import org.springframework.http.converter.json.GsonBuilderUtils;
  *
  *  案例1：顺序发送信息，线程A完成发送后，再由线程B发送。 （锁住实例方法）
  */
-public class synchronizedDemo1 {
+public class SynchronizedDemo1 {
 
     public static void main(String[] args) {
         Sender sender = new Sender();
