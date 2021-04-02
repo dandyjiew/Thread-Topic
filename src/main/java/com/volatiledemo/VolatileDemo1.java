@@ -38,11 +38,11 @@ public class VolatileDemo1 {
         new Thread(() -> {
             while (true) {
                 if (flag) {
-                    System.out.println("线程A开始运行");
+                    System.out.println(Thread.currentThread().getName() + " 读取到修改后的值，并终止循环");
                     break;
                 }
             }
-        }).start();
+        }, "A").start();
 
         //线程B第二个执行，修改共享变量为true
         new Thread(() -> {
@@ -53,8 +53,8 @@ public class VolatileDemo1 {
                 e.printStackTrace();
             }
             flag = true;
-            System.out.println("线程B修改标记成功");
-        }).start();
+            System.out.println(Thread.currentThread().getName() + " 修改标记成功");
+        }, "B").start();
 
         //线程C最后执行，读取共享变量值
         new Thread(() -> {
@@ -63,7 +63,7 @@ public class VolatileDemo1 {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            System.out.println("线程C读取到的标记为" + flag);
-        }).start();
+            System.out.println(Thread.currentThread().getName() + " 读取到的标记为" + flag);
+        }, "C").start();
     }
 }
