@@ -1,7 +1,5 @@
 package com.synchronizeddemo;
 
-import org.springframework.http.converter.json.GsonBuilderUtils;
-
 /**
  * 多线程程序经常会出现这样的情况:多个线程试图访问相同的资源，最终产生错误的和不可预见的结果。
  * 因此，需要通过某种同步方法来确保在给定的时间点只有一个线程可以访问资源。
