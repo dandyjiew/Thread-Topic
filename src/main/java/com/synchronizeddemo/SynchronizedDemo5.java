@@ -6,6 +6,8 @@ package com.synchronizeddemo;
  *
  * 一个常见的场景是,一个冗长的方法中，其实只有一小段代码需要访问共享资源，但是加了synchronized其他线程也要必须等待，
  * 有时候这种长时间等待是低效率且没有必要的，这时使用同步块，就只将这小段代码裹在synchronized  block，既能够实现同步访问，也能够减少同步引入的开销。 同步代码块须写在方法中。
+ *
+ * synchronized(this)锁住的是该类的实例对象
  */
 public class SynchronizedDemo5 {
 
