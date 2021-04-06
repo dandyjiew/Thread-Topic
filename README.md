@@ -23,6 +23,10 @@
   - Java8+ 并行计算
 
   - Spring异步执行
-
-- [ ] ThreadLocal
+- [x] Synchronized
+  - 锁住实例方法
+  - 锁住静态方法
+  - 锁住实例对象
+  - 锁住class对象
+  - 锁住任意实例对象Obje'c't
 
