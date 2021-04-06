@@ -20,6 +20,7 @@ package com.synchronizeddemo;
  *  3. 任意实例对象Object（实例对象Object）
  *
  *  案例1：顺序发送信息，线程A完成发送后，再由线程B发送。 （锁住实例方法）
+ *  注意：我们取得的是对象锁，也就是说，一个对象一个锁，而不是锁住整个类或者代码或者方法。
  */
 public class SynchronizedDemo1 {
 
