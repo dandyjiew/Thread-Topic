@@ -25,7 +25,7 @@ package com.synchronizeddemo;
 public class SynchronizedDemo1 {
 
     public static void main(String[] args) {
-        Sender sender = new Sender();
+        Sender1 sender = new Sender1();
 
         new Thread(() -> {
             sender.send(Thread.currentThread().getName() + " 登场");
@@ -38,7 +38,7 @@ public class SynchronizedDemo1 {
 
 }
 
-class Sender {
+class Sender1 {
     //可以删除synchronized后查看效果
     public synchronized void send(String msg) {
         System.out.println("准备发送: " + msg);
