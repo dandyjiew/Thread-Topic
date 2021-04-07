@@ -5,23 +5,14 @@
 内容有：
 
 - [x] 创建线程的方法
-
   - 继承Thread类
-
   - 实现Runnable
-
   - 实现Callabe
-
   - 使用匿名类的方式
-
   - 定时器（java.util.Timer）
-
   - 定时器（newSingleThreadScheduledExecutor）
-
   - 使用线程池创建线程执行任务
-
   - Java8+ 并行计算
-
   - Spring异步执行
 - [x] Synchronized
   - 锁住实例方法
