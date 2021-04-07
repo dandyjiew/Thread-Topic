@@ -40,10 +40,12 @@ class Worker1 implements Runnable {
     public void run() {
         try {
             //也可以设置tryLock的超时等待时间tryLock(long timeout,TimeUnit unit)，也就是说一个线程在指定的时间内没有获取锁，那就会返回false，就可以再去做其他事了。
-            if (!firstLock.tryLock()) {
-                TimeUnit.MILLISECONDS.sleep(10);
+            //当获取到锁后，休眠，保证两个线程都能获取各自的第一把锁
+            if (firstLock.tryLock()) {
+                TimeUnit.MILLISECONDS.sleep(100);
             }
 
+            //获取不到锁，放弃争夺
             if (!secondLock.tryLock()) {
                 TimeUnit.MILLISECONDS.sleep(10);
             }
