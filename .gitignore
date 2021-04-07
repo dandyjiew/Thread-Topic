@@ -24,3 +24,7 @@ hs_err_pid*
 .idea
 out/
 target/
+.out
+.target
+/out
+/target
